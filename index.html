@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Haiii Diiii 💗</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe3ef,
+                    #e1f6ff,
+                    #fff7fb
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        /* Background bubbles */
+
+        .bubble {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.55);
+
+            animation: float 6s infinite ease-in-out;
+
+        }
+
+        .b1 {
+            width: 120px;
+            height: 120px;
+            top: 8%;
+            left: 7%;
+        }
+
+        .b2 {
+            width: 180px;
+            height: 180px;
+            bottom: -50px;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+
+        .b3 {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+        }
+
+
+        /* Floating hearts */
+
+        .heart {
+
+            position: absolute;
+
+            font-size: 24px;
+
+            animation: heartFloat 5s infinite ease-in-out;
+
+        }
+
+        .heart1 {
+            left: 12%;
+            bottom: 20%;
+        }
+
+        .heart2 {
+            right: 12%;
+            top: 25%;
+            animation-delay: 1s;
+        }
+
+        .heart3 {
+            left: 25%;
+            top: 12%;
+            animation-delay: 2s;
+        }
+
+
+        @keyframes heartFloat {
+
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+
+        }
+
+
+        /* Main card */
+
+        .card {
+
+            width: 90%;
+            max-width: 460px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.88);
+
+            border-radius: 32px;
+
+            border: 2px solid white;
+
+            box-shadow:
+                0 18px 45px
+                rgba(120,170,200,0.25);
+
+            position: relative;
+
+            z-index: 5;
+
+            animation: appear 1s ease;
+
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.85)
+                    translateY(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* Cute icon */
+
+        .icon {
+
+            font-size: 65px;
+
+            display: inline-block;
+
+            animation: wiggle 2s infinite;
+
+        }
+
+
+        @keyframes wiggle {
+
+            0%, 100% {
+                transform: rotate(0);
+            }
+
+            25% {
+                transform: rotate(-8deg);
+            }
+
+            75% {
+                transform: rotate(8deg);
+            }
+
+        }
+
+
+        h1 {
+
+            margin-top: 15px;
+
+            font-size: 31px;
+
+            color: #e575a1;
+
+        }
+
+
+        .main-text {
+
+            margin-top: 15px;
+
+            color: #647984;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .funny {
+
+            margin-top: 12px;
+
+            color: #9b8291;
+
+            font-size: 13px;
+
+        }
+
+
+        /* Button */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 27px;
+
+            padding: 14px 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9fc4,
+                    #8fdcf5
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-4px)
+                scale(1.04);
+
+            box-shadow:
+                0 10px 22px
+                rgba(130,190,220,0.35);
+
+        }
+
+
+        .small {
+
+            margin-top: 18px;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+        }
+
+
+        /* Mobile */
+
+        @media(max-width:600px) {
+
+            .card {
+                padding: 38px 22px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .icon {
+                font-size: 55px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Background -->
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+
+
+    <!-- Hearts -->
+
+    <div class="heart heart1">💗</div>
+    <div class="heart heart2">🩵</div>
+    <div class="heart heart3">✨</div>
+
+
+    <!-- Main Card -->
+
+    <div class="card">
+
+
+        <div class="icon">
+            👋🏻💗
+        </div>
+
+
+        <h1>
+            Haiii Diiii! 🥹
+        </h1>
+
+
+        <p class="main-text">
+
+            Epidi irukka, madam? 😌
+
+            <br>
+
+            Unakkaga onnu create panni irukken...
+
+            <br>
+
+            Adhu enna nu paakanuma? 👀💕
+
+        </p>
+
+
+        <p class="funny">
+
+            Aana... konjam patience venum 😂
+
+        </p>
+
+
+        <a href="sub.html" class="button">
+
+            Enna Irukku? 👀💗
+
+        </a>
+
+
+        <p class="small">
+
+            Click pannitu escape aaga mudiyadhu 😂
+
+        </p>
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+

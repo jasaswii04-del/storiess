@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Note 💌</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Segoe UI", sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff4ff,
+            #f6e8ff,
+            #fff2e8
+        );
+
+    color:#66576a;
+
+    overflow:hidden;
+}
+
+
+/* BACKGROUND HEARTS */
+
+.heart{
+    position:fixed;
+    color:#d998b8;
+    opacity:.5;
+    animation:float 5s ease-in-out infinite;
+}
+
+.h1{
+    top:15%;
+    left:10%;
+    font-size:22px;
+}
+
+.h2{
+    top:25%;
+    right:10%;
+    font-size:17px;
+    animation-delay:2s;
+}
+
+.h3{
+    bottom:18%;
+    left:15%;
+    font-size:19px;
+    animation-delay:1s;
+}
+
+.h4{
+    bottom:12%;
+    right:13%;
+    font-size:23px;
+    animation-delay:3s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(8deg);
+    }
+
+}
+
+
+/* NOTE */
+
+.note{
+
+    position:relative;
+
+    width:min(460px,94vw);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#fffdf9;
+
+    padding:38px 30px 32px;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 25px 60px rgba(90,70,100,.18);
+
+    border:
+        5px solid rgba(255,255,255,.8);
+
+    animation:openNote .9s ease;
+}
+
+@keyframes openNote{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            rotate(-2deg);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+}
+
+
+/* TAPE */
+
+.tape{
+
+    position:absolute;
+
+    width:90px;
+    height:25px;
+
+    background:#f5d6df;
+
+    opacity:.7;
+
+    top:-10px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+}
+
+
+/* TITLE */
+
+.title{
+    text-align:center;
+
+    color:#bd6d96;
+
+    font-size:29px;
+
+    margin-bottom:22px;
+}
+
+.subtitle{
+    text-align:center;
+
+    color:#a37b91;
+
+    font-size:12px;
+
+    margin-bottom:25px;
+}
+
+
+/* CONTENT */
+
+.note p{
+
+    font-size:14px;
+
+    line-height:1.85;
+
+    margin-bottom:18px;
+}
+
+.hey{
+    color:#b96b91;
+    font-weight:600;
+}
+
+
+/* DIVIDER */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:24px 0;
+
+    color:#d59ab5;
+
+    font-size:13px;
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:#efd5e0;
+}
+
+
+/* MEMORY BOX */
+
+.memory-box{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f6,
+            #f5f0ff
+        );
+
+    padding:20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    margin-top:10px;
+
+    border:1px solid #f1dce8;
+}
+
+.memory-box .big{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.memory-box p{
+    margin:0;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* FINAL */
+
+.final{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#a86488;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+.final strong{
+
+    display:block;
+
+    font-size:18px;
+
+    margin-top:8px;
+
+}
+
+
+/* NEXT BUTTON */
+
+.next{
+
+    display:block;
+
+    width:max-content;
+
+    margin:25px auto 0;
+
+    padding:11px 22px;
+
+    border-radius:25px;
+
+    background:#d582aa;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    box-shadow:
+        0 8px 20px rgba(180,100,145,.22);
+
+    transition:.3s;
+}
+
+.next:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    body{
+        padding:15px;
+    }
+
+    .note{
+        padding:32px 22px 25px;
+    }
+
+    .title{
+        font-size:25px;
+    }
+
+    .note p{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♡</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♡</div>
+
+
+<!-- NOTE -->
+
+<div class="note">
+
+    <div class="tape"></div>
+
+
+    <h1 class="title">
+        A Little Note 💌
+    </h1>
+
+
+    <div class="subtitle">
+        Just something I wanted to say... 🥹
+    </div>
+
+
+    <p class="hey">
+        Heyy... 💗
+    </p>
+
+
+    <p>
+        Namma share pannina memories ellame
+        perfect-a irunthuchu nu solla mudiyathu.
+        Sila fights irunthuchu...
+        sila misunderstandings irunthuchu...
+        neraya comedy moments-um irunthuchu. 😂
+    </p>
+
+
+    <p>
+        But athanala dhaan antha friendship
+        real-ah irunthuchu.
+    </p>
+
+
+    <div class="divider">
+        ✦
+    </div>
+
+
+    <p>
+        School-la start aana friendship,
+        college-la romba close aana friendship,
+        last day varaikum iruntha memories...
+        ithu ellam life-la marakka mudiyatha
+        oru chapter. 🥹💗
+    </p>
+
+
+    <p>
+        Antha days ella enaku eppovum marakathu.
+        Unnaiyum eppovum maraka maten. 🫶🏻 Love You bablu 💗
+        
+        
+    </p>
+
+
+    <div class="memory-box">
+
+        <div class="big">
+            💗
+        </div>
+
+        <p>
+            <strong>Memories Stay.</strong><br><br>
+
+            Time change aagalam...
+            life change aagalam...
+            namma daily talks change aagalam...
+        </p>
+
+    </div>
+
+
+    <div class="final">
+
+        But once something becomes
+        a beautiful memory,
+        it always has a little place
+        in our heart. 🥹
+
+        <strong>
+            Forever one of my favourite chapters. 💗
+        </strong>
+
+    </div>
+
+
+    <a
+        href="final.html"
+        class="next"
+    >
+        One Last think ✨
+    </a>
+
+
+</div>
+
+
+<script>
+
+if(
+    sessionStorage.getItem("loggedIn")
+    !== "true"
+){
+
+    window.location.href="sub.html";
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Little Story 💗</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    font-family:"Segoe UI", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff5ff,
+            #f7e8ff,
+            #fff1e8
+        );
+
+    color:#66576a;
+    overflow:hidden;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    color:#d889ad;
+    opacity:.55;
+    animation:float 4s ease-in-out infinite;
+}
+
+.h1{
+    top:15%;
+    left:10%;
+    font-size:25px;
+}
+
+.h2{
+    top:25%;
+    right:12%;
+    font-size:20px;
+    animation-delay:1s;
+}
+
+.h3{
+    bottom:20%;
+    left:15%;
+    font-size:22px;
+    animation-delay:2s;
+}
+
+.h4{
+    bottom:12%;
+    right:15%;
+    font-size:27px;
+    animation-delay:3s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+/* CLOUDS */
+
+.cloud{
+    position:fixed;
+    width:120px;
+    height:35px;
+    background:rgba(255,255,255,.6);
+    border-radius:50px;
+    animation:cloudMove 18s linear infinite;
+}
+
+.cloud1{
+    top:10%;
+    left:-130px;
+}
+
+.cloud2{
+    top:32%;
+    left:-150px;
+    width:90px;
+    height:28px;
+    animation-delay:7s;
+}
+
+@keyframes cloudMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(120vw);
+    }
+
+}
+
+/* MAIN */
+
+.container{
+    width:min(430px,94vw);
+    text-align:center;
+    position:relative;
+    z-index:5;
+
+    background:rgba(255,255,255,.55);
+    padding:35px 25px;
+    border-radius:30px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(130,100,140,.15);
+
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* LITTLE TOP */
+
+.small-title{
+    font-size:11px;
+    letter-spacing:3px;
+    color:#a56e8c;
+    margin-bottom:12px;
+}
+
+/* TITLE */
+
+h1{
+    color:#bd6d96;
+    font-size:28px;
+    margin-bottom:22px;
+}
+
+/* STORY */
+
+.story{
+    font-size:14px;
+    line-height:2;
+    color:#756477;
+}
+
+.story span{
+    color:#b96891;
+    font-weight:600;
+}
+
+/* DECORATION */
+
+.divider{
+    margin:25px auto;
+    width:80px;
+    height:2px;
+    background:#e8b9cf;
+    border-radius:10px;
+}
+
+.question{
+    font-size:15px;
+    color:#a35f82;
+    margin-top:22px;
+    font-weight:500;
+}
+
+/* BUTTON */
+
+.next{
+    display:inline-block;
+    margin-top:25px;
+
+    padding:12px 25px;
+
+    border-radius:25px;
+
+    background:#d582aa;
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    box-shadow:
+        0 7px 15px
+        rgba(180,100,140,.2);
+
+    transition:.3s;
+}
+
+.next:hover{
+    transform:translateY(-4px);
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    body{
+        padding:15px;
+    }
+
+    .container{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+    .story{
+        font-size:13px;
+        line-height:1.9;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<!-- CLOUDS -->
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♡</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♡</div>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="small-title">
+        A LITTLE STORY ABOUT US ✨
+    </div>
+
+
+    <h1>
+        Welcome to our little story... 🥹💗
+    </h1>
+
+
+    <div class="story">
+
+        Namma school days, college days,<br>
+
+        silly moments, fights, laughter<br>
+
+        and namma serndhu create panna<br>
+
+        <span>
+            neraya memories
+        </span>
+
+        oda oru small story idhu. 🫶🏻
+
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <div class="question">
+        Ready-ah? 👀✨
+    </div>
+
+
+    <a href="page2.html" class="next">
+        Let's Go → 💗
+    </a>
+
+</div>
+
+
+<script>
+
+/* LOGIN PROTECTION */
+
+if(
+    sessionStorage.getItem("loggedIn")
+    !== "true"
+){
+    window.location.href="sub.html";
+}
+
+</script>
+
+
+</body>
+
+</html>

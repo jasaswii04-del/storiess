@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oii Madam 😂💗</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#ffe5f0,#e0f5ff,#fff8fc);
+    overflow:hidden;
+}
+
+/* Floating emojis */
+
+.float{
+    position:absolute;
+    font-size:25px;
+    opacity:.7;
+    animation:float 5s infinite ease-in-out;
+    pointer-events:none;
+}
+
+.f1{
+    left:10%;
+    top:15%;
+}
+
+.f2{
+    right:10%;
+    top:20%;
+    animation-delay:1s;
+}
+
+.f3{
+    left:15%;
+    bottom:15%;
+    animation-delay:2s;
+}
+
+.f4{
+    right:15%;
+    bottom:18%;
+    animation-delay:3s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(10deg);
+    }
+
+}
+
+
+/* Main box */
+
+.box{
+    width:92%;
+    max-width:450px;
+    background:rgba(255,255,255,.94);
+    padding:32px 24px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(120,170,200,.25);
+    border:2px solid white;
+    position:relative;
+    z-index:5;
+}
+
+
+/* Emoji */
+
+.emoji{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+
+/* Front */
+
+#front h1{
+    color:#e477a2;
+    font-size:26px;
+    margin-bottom:14px;
+}
+
+#front p{
+    color:#667985;
+    line-height:1.8;
+    font-size:15px;
+    margin-bottom:24px;
+}
+
+
+/* Start */
+
+.start-btn{
+    border:none;
+    padding:13px 28px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ff9fc4,#8fdcf5);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.start-btn:hover{
+    transform:scale(1.05);
+}
+
+
+/* Game */
+
+#game{
+    display:none;
+}
+
+.question-number{
+    color:#9aaeb9;
+    font-size:13px;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+.question{
+    color:#e477a2;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    border-radius:18px;
+    border:2px solid #f5dce8;
+    background:white;
+    color:#667985;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.option:hover{
+    background:#fff1f6;
+    border-color:#ff9fc4;
+    transform:scale(1.02);
+}
+
+.option:disabled{
+    cursor:default;
+}
+
+.option.correct{
+    background:#dff9eb;
+    border-color:#73d6a1;
+    color:#399565;
+}
+
+.option.wrong{
+    background:#ffe1e8;
+    border-color:#ff8fa8;
+    color:#d95d79;
+}
+
+.feedback{
+    min-height:28px;
+    margin-top:13px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.next-btn{
+    display:none;
+    margin-top:12px;
+    padding:11px 25px;
+    border:none;
+    border-radius:22px;
+    background:linear-gradient(135deg,#ff9fc4,#8fdcf5);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+/* Completed */
+
+#completed{
+    display:none;
+}
+
+#completed h2{
+    color:#e477a2;
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.final-score{
+    color:#e477a2;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.final-message{
+    color:#667985;
+    line-height:1.7;
+    font-size:15px;
+}
+
+
+/* Login */
+
+.login-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 27px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ff9fc4,#8fdcf5);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:scale(1.05);
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .box{
+        padding:28px 18px;
+    }
+
+    #front h1{
+        font-size:23px;
+    }
+
+    .question{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Floating Emojis -->
+
+<div class="float f1">💗</div>
+<div class="float f2">😂</div>
+<div class="float f3">💕</div>
+<div class="float f4">✨</div>
+
+
+<div class="box">
+
+
+    <!-- =========================
+         FRONT PAGE
+    ========================== -->
+
+    <div id="front">
+
+        <div class="emoji">
+            🎮💗
+        </div>
+
+        <h1>
+            Oii Madam 😂💗
+        </h1>
+
+        <p>
+
+            Ulla pogarathukku munnaadi
+            <br>
+
+            <b>oru chinna game irukku! 👀😂</b>
+
+            <br><br>
+
+            Adha complete pannunga...
+            <br>
+
+            <b>appuram dhaan login panna mudiyum. 🔐💗</b>
+
+            <br><br>
+
+            Paakalaam... namma friendship-ah
+    <br>
+    evlo correct-ah therinjirukku nu! 😂💗
+
+        </p>
+
+
+        <button
+            class="start-btn"
+            onclick="startGame()">
+
+            Start Game 🎮💗
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         GAME
+    ========================== -->
+
+    <div id="game">
+
+        <div class="emoji">
+            👀😂
+        </div>
+
+
+        <div
+            class="question-number"
+            id="questionNumber">
+
+            Question 1 / 6
+
+        </div>
+
+
+        <div
+            class="question"
+            id="question">
+        </div>
+
+
+        <div
+            class="options"
+            id="options">
+        </div>
+
+
+        <div
+            class="feedback"
+            id="feedback">
+        </div>
+
+
+        <button
+            class="next-btn"
+            id="nextButton"
+            onclick="nextQuestion()">
+
+            Next ➜
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         COMPLETED
+    ========================== -->
+
+    <div id="completed">
+
+        <div class="emoji">
+            🎉💗
+        </div>
+
+
+        <h2>
+            Game Completed! 🥳
+        </h2>
+
+
+        <div
+            class="final-score"
+            id="finalScore">
+        </div>
+
+
+        <div
+            class="final-message"
+            id="finalMessage">
+        </div>
+
+
+        <a
+            href="login.html"
+            class="login-btn">
+
+            Continue to Login 🔐💗
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================
+   ACTUAL QUESTIONS
+   -----------------------------------------
+   answer:
+   0 = first option
+   1 = second option
+   2 = third option
+   3 = fourth option
+========================================= */
+
+const questions = [
+
+    {
+        question:
+        "Namma rendu perum first time close-ah pesuna place edhu? 👀😂",
+
+        options:[
+            "School 🏫",
+            "College 🎓",
+            "Online / Chat 📱",
+            "Other 😌"
+        ],
+
+        answer:1
+    },
+
+
+    {
+        question:
+        "Namma rendu perum serndha maximum enna pannuvom? 😂",
+
+        options:[
+            "Serious-ah pesuvom 😌",
+            "Gossip peasuvom 🤣",
+            "Silent-ah iruppom 😇",
+            "Thoonguvom 😴"
+        ],
+
+        answer:1
+    },
+
+
+    {
+    question:
+    "Namma rendu perum first time class cut adichadhu enga ponom? 👀😂",
+
+    options:[
+        "Library 📚",
+        "Bathroom 🚿😂",
+        "Medical Room 🏥😂",
+        "Canteen 🍕"
+    ],
+
+    answer:2
+},
+
+
+    {
+    question:
+    "Namma library-la sanda vandhathukku reason enna? 👀😂",
+
+    options:[
+        "Ring vachu vandhadhunaala 💍😂",
+        "Oru small misunderstanding 😭",
+        "Yaaravadhu edhavadhu solli iruppanga 😂",
+        "Summa comedy-ku sanda vandhuchu 🤣"
+    ],
+
+    answer:0
+},
+
+{
+    question:
+    "Namma rendu perum first time pesuna exact topic enna? 👀😂",
+
+    options:[
+        "Afrin pathi 👀",
+        "Karishma pathi 😂",
+        "Dona & Jebi pathi 😌",
+        "Random topic 🤣"
+    ],
+
+    answer:1
+},
+
+
+  {
+    question:
+    "First time naan unakku kudutha keychain edhu? 👀😂",
+
+    options:[
+        "Doll 🎀",
+        "Tom & Jerry 🐱🐭",
+        "Colorful Glass Keychain 🌈✨",
+        "Heart ❤️"
+    ],
+
+    answer:1
+},
+
+
+];
+
+
+let currentQuestion = 0;
+
+let score = 0;
+
+
+
+/* =========================================
+   START GAME
+========================================= */
+
+function startGame(){
+
+    document.getElementById("front").style.display =
+        "none";
+
+    document.getElementById("game").style.display =
+        "block";
+
+    showQuestion();
+
+}
+
+
+
+/* =========================================
+   SHOW QUESTION
+========================================= */
+
+function showQuestion(){
+
+    const q = questions[currentQuestion];
+
+
+    document.getElementById("questionNumber").innerText =
+        "Question " +
+        (currentQuestion + 1) +
+        " / " +
+        questions.length;
+
+
+    document.getElementById("question").innerText =
+        q.question;
+
+
+    const optionsBox =
+        document.getElementById("options");
+
+    optionsBox.innerHTML = "";
+
+
+    document.getElementById("feedback").innerText =
+        "";
+
+
+    document.getElementById("nextButton").style.display =
+        "none";
+
+
+    q.options.forEach(function(option,index){
+
+        const button =
+            document.createElement("button");
+
+
+        button.className =
+            "option";
+
+
+        button.innerText =
+            option;
+
+
+        button.onclick = function(){
+
+            checkAnswer(index,button);
+
+        };
+
+
+        optionsBox.appendChild(button);
+
+    });
+
+}
+
+
+
+/* =========================================
+   CHECK ANSWER
+========================================= */
+
+function checkAnswer(selected,button){
+
+    const q =
+        questions[currentQuestion];
+
+
+    const allOptions =
+        document.querySelectorAll(".option");
+
+
+    /* Stop multiple clicks */
+
+    allOptions.forEach(function(option){
+
+        option.disabled = true;
+
+    });
+
+
+    /* Correct */
+
+    if(selected === q.answer){
+
+        button.classList.add("correct");
+
+
+        document.getElementById("feedback").innerText =
+            "Correct! 😂💗 Unakku nalla theriyum!";
+
+
+        document.getElementById("feedback").style.color =
+            "#399565";
+
+
+        score++;
+
+    }
+
+
+    /* Wrong */
+
+    else{
+
+        button.classList.add("wrong");
+
+
+        allOptions[q.answer]
+            .classList.add("correct");
+
+
+        document.getElementById("feedback").innerText =
+            "Ayyooo 😂 Wrong-u!";
+
+
+        document.getElementById("feedback").style.color =
+            "#d95d79";
+
+    }
+
+
+    document.getElementById("nextButton").style.display =
+        "inline-block";
+
+}
+
+
+
+/* =========================================
+   NEXT QUESTION
+========================================= */
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+
+    if(currentQuestion < questions.length){
+
+        showQuestion();
+
+    }
+
+    else{
+
+        completeGame();
+
+    }
+
+}
+
+
+
+/* =========================================
+   COMPLETE GAME
+========================================= */
+
+function completeGame(){
+
+    document.getElementById("game").style.display =
+        "none";
+
+
+    document.getElementById("completed").style.display =
+        "block";
+
+
+    document.getElementById("finalScore").innerText =
+        score +
+        " / " +
+        questions.length;
+
+
+    let message = "";
+
+    if(score === 6){
+
+    message = 
+        "6/6?! 👀😂💗<br>" +
+        "Ada paavi... ivlo details-ah kooda nyabagam vachirukkiya! 🥹<br>" +
+        "Respect-u! 🫡✨";
+
+}
+
+
+    else if(score === 5){
+
+    message = 
+        "Awww! 🥹💗<br>" +
+        "5/6! Almost perfect! 😂💗<br>" +
+        "One mark mattum escape aayiduchu! 😜";
+
+}
+
+    else if(score === 4){
+
+        message =
+            "Semma! 😍💗<br>" +
+            "Almost perfect!";
+
+    }
+
+    else if(score === 3){
+
+        message =
+            "Okay okayyy 😂💗<br>" +
+            "Paravala!";
+
+    }
+
+    else if(score === 2){
+
+        message =
+            "Dei/di 😂💗<br>" +
+            "Konjam observe pannu!";
+
+    }
+
+    else if(score === 1){
+
+        message =
+            "Ayyooo 😂😭<br>" +
+            "Ivalo naal friend-ah?!";
+
+    }
+
+    else{
+
+        message =
+            "Nee enna friend-ah? 😂💔";
+
+    }
+
+
+    document.getElementById("finalMessage").innerHTML =
+        message;
+
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Last Little Surprise 💌</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    min-height:100vh;
+    overflow-y:auto;
+
+    font-family:"Segoe UI", sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff5ff,
+            #f7e8ff,
+            #fff1e8
+        );
+
+    color:#66576a;
+}
+
+
+/* CLOUDS */
+
+.cloud{
+
+    position:fixed;
+
+    width:130px;
+
+    height:38px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border-radius:50px;
+
+    animation:
+        moveCloud 18s linear infinite;
+
+}
+
+
+.cloud1{
+
+    top:12%;
+
+    left:-150px;
+
+}
+
+
+.cloud2{
+
+    top:28%;
+
+    left:-180px;
+
+    width:100px;
+
+    height:30px;
+
+    animation-delay:7s;
+
+}
+
+
+@keyframes moveCloud{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(120vw);
+    }
+
+}
+
+
+/* FLOATING HEARTS */
+
+.heart{
+
+    position:fixed;
+
+    color:#d997b7;
+
+    opacity:.55;
+
+    animation:
+        heartFloat 4s ease-in-out infinite;
+
+}
+
+
+.h1{
+
+    top:18%;
+
+    left:10%;
+
+    font-size:24px;
+
+}
+
+
+.h2{
+
+    top:35%;
+
+    right:10%;
+
+    font-size:18px;
+
+    animation-delay:1.5s;
+
+}
+
+
+.h3{
+
+    bottom:18%;
+
+    left:15%;
+
+    font-size:20px;
+
+    animation-delay:2s;
+
+}
+
+
+.h4{
+
+    bottom:12%;
+
+    right:14%;
+
+    font-size:25px;
+
+    animation-delay:3s;
+
+}
+
+
+@keyframes heartFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-15px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+/* MAIN */
+
+.page{
+    width:min(440px,94vw);
+    text-align:center;
+    position:relative;
+    z-index:5;
+    padding-bottom:40px;
+}
+
+
+/* TITLE */
+
+.small-title{
+
+    color:#a56e8c;
+
+    letter-spacing:3px;
+
+    font-size:10px;
+
+    margin-bottom:7px;
+
+}
+
+
+h1{
+
+    color:#bd6d96;
+
+    font-size:31px;
+
+    margin-bottom:7px;
+
+}
+
+
+.subtitle{
+
+    font-size:12px;
+
+    color:#806b7c;
+
+    margin-bottom:28px;
+
+}
+
+
+/* ENVELOPE AREA */
+
+.envelope-area{
+
+    position:relative;
+
+    height:290px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* ENVELOPE */
+
+.envelope{
+
+    position:relative;
+
+    width:270px;
+
+    height:180px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    filter:
+        drop-shadow(
+            0 18px 20px
+            rgba(100,70,100,.18)
+        );
+
+}
+
+
+.envelope:hover{
+
+    transform:
+        translateY(-6px)
+        rotate(-1deg);
+
+}
+
+
+/* ENVELOPE BODY */
+
+.envelope-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ffdce9;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    z-index:3;
+
+}
+
+
+/* LEFT FOLD */
+
+.envelope-body::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:0;
+
+    border-left:
+        135px solid #f5c5d8;
+
+    border-top:
+        90px solid transparent;
+
+}
+
+
+/* RIGHT FOLD */
+
+.envelope-body::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:0;
+
+    border-right:
+        135px solid #f5c5d8;
+
+    border-top:
+        90px solid transparent;
+
+}
+
+
+/* TOP FLAP */
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:0;
+
+    border-left:
+        135px solid transparent;
+
+    border-right:
+        135px solid transparent;
+
+    border-top:
+        105px solid #f2b8ce;
+
+    transform-origin:top center;
+
+    z-index:6;
+
+    transition:
+        transform .8s ease;
+
+}
+
+
+.envelope.open .flap{
+
+    transform:
+        rotateX(180deg);
+
+    z-index:1;
+
+}
+
+
+/* LETTER */
+
+.letter{
+
+    position:absolute;
+
+    width:225px;
+
+    height:155px;
+
+    background:#fffdf9;
+
+    left:22px;
+
+    bottom:8px;
+
+    border-radius:7px;
+
+    z-index:2;
+
+    padding:18px;
+
+    opacity:0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        transform .8s ease,
+        opacity .5s ease;
+
+    box-shadow:
+        0 5px 15px
+        rgba(80,60,80,.1);
+
+}
+
+
+.envelope.open .letter{
+
+    opacity:1;
+
+    transform:
+        translateY(-125px);
+
+    z-index:7;
+
+}
+
+
+/* LETTER CONTENT */
+
+.letter h2{
+
+    color:#bc6d96;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+
+.letter p{
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+
+/* HEART SEAL */
+
+.seal{
+
+    position:absolute;
+
+    z-index:8;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:43px;
+
+    height:43px;
+
+    background:#d982a9;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:21px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(180,90,140,.25);
+
+    transition:.4s;
+
+}
+
+
+.envelope.open .seal{
+
+    opacity:0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.4);
+
+}
+
+
+/* TAP */
+
+.tap{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    font-size:11px;
+
+    color:#a36e89;
+
+    animation:
+        blink 2s ease-in-out infinite;
+
+}
+
+
+@keyframes blink{
+
+    50%{
+        opacity:.45;
+    }
+
+}
+
+
+/* FINAL MESSAGE */
+
+.final-message{
+
+    margin-top:8px;
+
+    opacity:0;
+
+    transform:
+        translateY(15px);
+
+    transition:.8s;
+
+}
+
+
+.final-message.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.final-message h2{
+
+    color:#b96891;
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+
+.final-message p{
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+
+}
+
+
+.end{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#a35f82;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* BYE */
+
+.bye{
+
+    margin-top:20px;
+
+    color:#b96891;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    font-weight:500;
+
+}
+
+
+/* HOME BUTTON */
+
+.home{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:10px 20px;
+
+    border-radius:22px;
+
+    background:#d582aa;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+}
+
+
+.home.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+.home:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+
+    h1{
+
+        font-size:27px;
+
+    }
+
+
+    .subtitle{
+
+        font-size:11px;
+
+    }
+
+
+    .envelope{
+
+        width:250px;
+
+        height:165px;
+
+    }
+
+
+    .envelope-body::before{
+
+        border-left-width:125px;
+
+        border-top-width:82px;
+
+    }
+
+
+    .envelope-body::after{
+
+        border-right-width:125px;
+
+        border-top-width:82px;
+
+    }
+
+
+    .flap{
+
+        border-left-width:125px;
+
+        border-right-width:125px;
+
+        border-top-width:98px;
+
+    }
+
+
+    .letter{
+
+        width:210px;
+
+        height:145px;
+
+        left:20px;
+
+    }
+
+
+    .envelope.open .letter{
+
+        transform:
+            translateY(-115px);
+
+    }
+
+
+    .final-message h2{
+
+        font-size:18px;
+
+    }
+
+
+    .final-message p{
+
+        font-size:12px;
+
+    }
+
+
+    .bye{
+
+        font-size:15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="cloud cloud1"></div>
+
+<div class="cloud cloud2"></div>
+
+
+<div class="heart h1">
+    ♡
+</div>
+
+<div class="heart h2">
+    ♡
+</div>
+
+<div class="heart h3">
+    ♡
+</div>
+
+<div class="heart h4">
+    ♡
+</div>
+
+
+
+<div class="page">
+
+
+    <!-- TITLE -->
+
+    <div class="small-title">
+
+        ONE LAST LITTLE THING
+
+    </div>
+
+
+    <h1>
+
+        I Saved This For You 💌
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        There is one little note left...
+
+    </p>
+
+
+
+    <!-- ENVELOPE -->
+
+    <div class="envelope-area">
+
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openLetter()"
+        >
+
+
+            <!-- LETTER -->
+
+            <div class="letter">
+
+                <h2>
+                    Heyy... 🫶🏻
+                </h2>
+
+                <p>
+
+                    Thank you for being one of
+                    the most beautiful parts of
+                    my school and college memories.
+                    💗
+
+                </p>
+
+            </div>
+
+
+            <!-- ENVELOPE -->
+
+            <div class="envelope-body"></div>
+
+
+            <!-- FLAP -->
+
+            <div class="flap"></div>
+
+
+            <!-- HEART -->
+
+            <div class="seal">
+
+                ♥
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="tap"
+            id="tap"
+        >
+
+            Tap the heart to open 💗
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FINAL MESSAGE -->
+
+    <div
+        class="final-message"
+        id="finalMessage"
+    >
+
+
+        <h2>
+
+            And that's it... 🥹💗
+
+        </h2>
+
+
+        <p>
+
+            Namma share pannina memories
+            ithu mattum illa...
+            innum neraya irukku. 🥹
+
+        </p>
+
+
+        <p>
+
+            Sila memories-a words-la solla mudiyathu...
+            sila moments-a explain panna mudiyathu...
+            aana nenacha mattum podhum,
+            antha days ellam thirumbi varra maari
+            irukkum. 💗
+
+        </p>
+
+
+        <p>
+
+            Life change aagalam...
+            namma daily talks change aagalam...
+            aana namma share pannina
+            antha memories mattum
+            eppavum memories-ah irukkum. 🫶🏻
+
+        </p>
+
+
+        <!-- NEW CONTENT -->
+
+        <p>
+
+            Unakku neraya friends irukaanga...
+            avanga kooda nalla enjoy pannu,
+            neraya beautiful memories create pannu. 💗
+
+            I’m really happy for you...
+            aana enna mattum maranthuratha... 🥹🫶🏻
+
+            Namma friendship eppavume special-ah irukkum. ❤️
+
+        </p>
+
+
+        <span class="end">
+
+            One beautiful chapter of my life. 💗
+
+        </span>
+
+
+        <!-- BYE -->
+
+        <div class="bye">
+
+            Byee... 🥹🫶🏻
+            <br>
+            Take care always. 💗
+            <br>
+            Gonna miss you so much, paithiyam... 🥹
+            <br>
+            Stay happy always. ❤️
+
+        </div>
+
+
+        <!-- HOME -->
+
+       
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* LOGIN PROTECTION */
+
+if(
+    sessionStorage.getItem("loggedIn")
+    !== "true"
+){
+
+    window.location.href="sub.html";
+
+}
+
+
+
+/* OPEN LETTER */
+
+function openLetter(){
+
+    const envelope =
+        document.getElementById("envelope");
+
+    const finalMessage =
+        document.getElementById("finalMessage");
+
+    const tap =
+        document.getElementById("tap");
+
+    const home =
+        document.getElementById("home");
+
+
+    envelope.classList.add("open");
+
+    tap.style.opacity="0";
+
+
+    setTimeout(
+        function(){
+
+            finalMessage.classList.add("show");
+
+            home.classList.add("show");
+
+        },
+        800
+    );
+
+}
+
+
+
+/* CLICK HEART EFFECT */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target.closest(".envelope")
+        ){
+
+            return;
+
+        }
+
+
+        const heart =
+            document.createElement("span");
+
+
+        heart.innerHTML="💗";
+
+
+        heart.style.position="fixed";
+
+
+        heart.style.left =
+            e.clientX + "px";
+
+
+        heart.style.top =
+            e.clientY + "px";
+
+
+        heart.style.fontSize="15px";
+
+
+        heart.style.pointerEvents="none";
+
+
+        heart.style.zIndex="100";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        heart.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) scale(1)",
+
+                    opacity:1
+                },
+
+                {
+                    transform:
+                        "translateY(-45px) scale(1.4)",
+
+                    opacity:0
+                }
+
+            ],
+
+            {
+
+                duration:700,
+
+                easing:"ease-out"
+
+            }
+
+        );
+
+
+        setTimeout(
+            () => heart.remove(),
+            700
+        );
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
+

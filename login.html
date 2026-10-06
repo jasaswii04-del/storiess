@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wait... Nee Dhaana? 😂💗</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe1ed,
+                    #dff4ff,
+                    #fff5fa
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        /* Floating circles */
+
+        .circle {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.55);
+
+            animation: float 7s infinite ease-in-out;
+
+        }
+
+        .c1 {
+
+            width: 130px;
+            height: 130px;
+
+            top: 5%;
+            left: 5%;
+
+        }
+
+        .c2 {
+
+            width: 170px;
+            height: 170px;
+
+            bottom: -40px;
+            right: 5%;
+
+            animation-delay: 2s;
+
+        }
+
+        .c3 {
+
+            width: 65px;
+            height: 65px;
+
+            top: 20%;
+            right: 12%;
+
+            animation-delay: 1s;
+
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+        }
+
+
+        /* Sparkles */
+
+        .sparkle {
+
+            position: absolute;
+
+            color: white;
+
+            font-size: 22px;
+
+            animation: sparkle 2s infinite alternate;
+
+        }
+
+        .s1 {
+            top: 15%;
+            left: 25%;
+        }
+
+        .s2 {
+            bottom: 20%;
+            left: 18%;
+            animation-delay: .5s;
+        }
+
+        .s3 {
+            top: 30%;
+            right: 25%;
+            animation-delay: 1s;
+        }
+
+        @keyframes sparkle {
+
+            from {
+                opacity: .3;
+                transform: scale(.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+
+        }
+
+
+        /* Main card */
+
+        .card {
+
+            width: 90%;
+            max-width: 430px;
+
+            padding: 40px 28px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,.82);
+
+            border: 2px solid white;
+
+            border-radius: 32px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(130,180,210,.25);
+
+            backdrop-filter: blur(10px);
+
+            position: relative;
+            z-index: 5;
+
+            animation: appear 1s ease;
+
+        }
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(40px)
+                    scale(.9);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* Funny emoji */
+
+        .emoji {
+
+            font-size: 60px;
+
+            display: inline-block;
+
+            animation: funny 2s infinite;
+
+        }
+
+        @keyframes funny {
+
+            0%,100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+
+        }
+
+
+        h1 {
+
+            margin-top: 12px;
+
+            color: #e875a2;
+
+            font-size: 30px;
+
+        }
+
+
+        .subtitle {
+
+            margin-top: 10px;
+
+            color: #718692;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .joke {
+
+            margin-top: 12px;
+
+            color: #9b8aa0;
+
+            font-size: 13px;
+
+        }
+
+
+        /* Inputs */
+
+        .input {
+
+            width: 100%;
+
+            padding: 14px 17px;
+
+            margin-top: 15px;
+
+            border: 2px solid #f0dce5;
+
+            border-radius: 20px;
+
+            outline: none;
+
+            background: white;
+
+            font-size: 14px;
+
+            transition: .3s;
+
+        }
+
+        .input:focus {
+
+            border-color: #f3a2c2;
+
+            box-shadow:
+                0 0 12px
+                rgba(243,162,194,.25);
+
+        }
+
+
+        /* Button */
+
+        .login-btn {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9fc4,
+                    #91daf5
+                );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+        .login-btn:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.02);
+
+            box-shadow:
+                0 8px 20px
+                rgba(130,190,220,.35);
+
+        }
+
+
+        /* Message */
+
+        #message {
+
+            min-height: 25px;
+
+            margin-top: 14px;
+
+            color: #e579a3;
+
+            font-size: 13px;
+
+        }
+
+
+        /* Shake */
+
+        .shake {
+
+            animation: shake .4s;
+
+        }
+
+        @keyframes shake {
+
+            0%,100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            75% {
+                transform: translateX(8px);
+            }
+
+        }
+
+
+        /* Success */
+
+        .success {
+
+            color: #62b6c8 !important;
+
+            font-weight: bold;
+
+        }
+
+
+        /* Mobile */
+
+        @media(max-width:600px) {
+
+            .card {
+                padding: 35px 22px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .emoji {
+                font-size: 50px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Background -->
+
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+
+
+    <!-- Sparkles -->
+
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+
+
+    <!-- Login Card -->
+
+    <div class="card" id="card">
+
+
+        <div class="emoji">
+            👀
+        </div>
+
+
+        <h1>
+            Wait... Nee Dhaana? 😂
+        </h1>
+
+
+        <p class="subtitle">
+
+            Inside enna irukku nu paakanum-na
+            first login pannu madam 😌💗
+
+        </p>
+
+
+        <p class="joke">
+
+            Wrong ah enter pannina...
+            naan kandupidichiduven 😏😂
+
+        </p>
+
+
+        <input
+            type="text"
+            id="username"
+            class="input"
+            placeholder="Un name sollu 👀">
+
+
+        <input
+            type="password"
+            id="password"
+            class="input"
+            placeholder="Secret password sollu 🤫">
+
+
+        <button
+            class="login-btn"
+            onclick="login()">
+
+            Seri... Unlock Pannu 😂🔐
+
+        </button>
+
+
+        <p id="message"></p>
+
+
+    </div>
+
+
+    <script>
+
+        function login() {
+
+            const username =
+                document.getElementById("username").value.trim();
+
+            const password =
+                document.getElementById("password").value.trim();
+
+            const message =
+                document.getElementById("message");
+
+            const card =
+                document.getElementById("card");
+
+
+            const correctUsername = "Bablu";
+            const correctPassword = "2022";
+
+
+            /* Empty fields */
+
+            if (username === "" || password === "") {
+
+                message.innerText =
+                    "Dei 😂 edhavadhu type pannitu login pannu!";
+
+                card.classList.remove("shake");
+
+                void card.offsetWidth;
+
+                card.classList.add("shake");
+
+                return;
+
+            }
+
+
+            /* Wrong username */
+
+            if (username !== correctUsername) {
+
+                message.innerText =
+                    "Yaaru nee? 🤨 First un identity prove pannu 😂";
+
+                card.classList.remove("shake");
+
+                void card.offsetWidth;
+
+                card.classList.add("shake");
+
+                return;
+
+            }
+
+
+            /* Wrong password */
+
+            if (password !== correctPassword) {
+
+                message.innerText =
+                    "Adei 😂 password kooda marandhutiya?";
+
+                card.classList.remove("shake");
+
+                void card.offsetWidth;
+
+                card.classList.add("shake");
+
+                return;
+
+            }
+
+
+            /* Correct login */
+
+            message.innerText =
+                "Aahhh! Ippo dhaan correct person vandhirukka 😌💗";
+
+            message.classList.add("success");
+
+
+            sessionStorage.setItem(
+                "loggedIn",
+                "true"
+            );
+
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "page3.html";
+
+            }, 1500);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+

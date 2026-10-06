@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our College Days 🎓💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Sacramento&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#fff8fb;
+    color:#453b4b;
+    overflow-x:hidden;
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 10% 10%,rgba(255,183,210,.45),transparent 25%),
+        radial-gradient(circle at 90% 20%,rgba(190,205,255,.45),transparent 25%),
+        radial-gradient(circle at 20% 80%,rgba(218,194,255,.4),transparent 25%),
+        radial-gradient(circle at 85% 85%,rgba(255,221,182,.45),transparent 25%);
+
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    opacity:.22;
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(#d89bb8 1px,transparent 1px);
+    background-size:25px 25px;
+}
+
+/* ===============================
+   LOGIN PROTECTION
+================================ */
+
+#xmsmud{
+    display:none;
+}
+
+/* ===============================
+   FLOATING DECORATIONS
+================================ */
+
+.float{
+    position:fixed;
+    z-index:10;
+    pointer-events:none;
+    animation:float 5s ease-in-out infinite;
+    opacity:.75;
+}
+
+.f1{top:12%;left:5%;font-size:25px;}
+.f2{top:28%;right:5%;font-size:22px;animation-delay:1s;}
+.f3{top:60%;left:3%;font-size:20px;animation-delay:2s;}
+.f4{top:78%;right:6%;font-size:25px;animation-delay:3s;}
+.f5{top:45%;right:2%;font-size:16px;animation-delay:1.5s;}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+    50%{
+        transform:translateY(-18px) rotate(8deg);
+    }
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:35px 18px;
+    position:relative;
+}
+
+.hero-card{
+    width:min(900px,100%);
+    min-height:650px;
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(135deg,
+        rgba(255,255,255,.92),
+        rgba(255,242,248,.88));
+
+    border:1px solid rgba(255,255,255,.9);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 35px 80px rgba(143,92,125,.18),
+        inset 0 0 0 1px rgba(255,255,255,.7);
+
+    overflow:hidden;
+}
+
+.hero-card::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:#ffd6e7;
+    filter:blur(20px);
+    top:-100px;
+    right:-80px;
+}
+
+.hero-card::after{
+    content:"";
+    position:absolute;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background:#dce3ff;
+    filter:blur(20px);
+    bottom:-100px;
+    left:-80px;
+}
+
+.hero-content{
+    width:min(650px,90%);
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.mini-label{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:100px;
+    background:#fff;
+    box-shadow:0 8px 25px rgba(150,100,130,.12);
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#a36d8e;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(42px,8vw,82px);
+    line-height:1;
+    color:#47394d;
+}
+
+.hero h1 span{
+    display:block;
+    font-family:'Sacramento',cursive;
+    font-size:1.1em;
+    color:#d783a7;
+    transform:rotate(-3deg);
+}
+
+.hero p{
+    margin-top:30px;
+    font-size:17px;
+    line-height:1.8;
+    color:#756979;
+}
+
+.hero-note{
+    margin:35px auto 0;
+    padding:17px 25px;
+    width:max-content;
+    max-width:100%;
+
+    background:#fff;
+    border-radius:15px;
+
+    box-shadow:
+        0 12px 30px rgba(130,90,120,.12);
+
+    transform:rotate(-2deg);
+    font-family:'Sacramento',cursive;
+    font-size:26px;
+    color:#b26e92;
+}
+
+.scroll{
+    margin-top:45px;
+    font-size:12px;
+    letter-spacing:3px;
+    color:#9b8797;
+}
+
+.scroll span{
+    display:block;
+    margin-top:10px;
+    font-size:22px;
+    animation:down 1.5s infinite;
+}
+
+@keyframes down{
+    50%{transform:translateY(8px);}
+}
+
+/* ===============================
+   SECTION BASE
+================================ */
+
+section{
+    width:min(1100px,92%);
+    margin:0 auto;
+    padding:100px 0;
+    position:relative;
+}
+
+.section-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:#fff;
+    padding:9px 17px;
+    border-radius:100px;
+
+    box-shadow:0 8px 25px rgba(130,90,120,.1);
+
+    font-size:12px;
+    color:#a06d8c;
+    letter-spacing:1px;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(35px,6vw,62px);
+    margin-top:20px;
+    color:#4b3b50;
+}
+
+.section-sub{
+    margin-top:12px;
+    color:#897a89;
+    line-height:1.7;
+}
+
+/* ===============================
+   FIRST YEAR
+================================ */
+
+.first-year{
+    position:relative;
+}
+
+.timeline-line{
+    position:absolute;
+    left:50%;
+    top:190px;
+    bottom:70px;
+    width:2px;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        #e9aec8,
+        #c7b9ef,
+        transparent
+    );
+}
+
+.memory-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    margin-top:70px;
+    position:relative;
+}
+
+.memory-row:nth-child(even){
+    direction:rtl;
+}
+
+.memory-row:nth-child(even) > *{
+    direction:ltr;
+}
+
+.memory-card{
+    position:relative;
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+
+    box-shadow:
+        0 25px 60px rgba(110,80,105,.12);
+
+    border:1px solid #f4e6ee;
+}
+
+.memory-card::before{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:20px;
+    background:rgba(255,215,229,.7);
+    top:-10px;
+    left:50%;
+    transform:translateX(-50%) rotate(-3deg);
+}
+
+.memory-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    color:#76516d;
+    margin-bottom:20px;
+}
+
+.memory-card p{
+    line-height:1.9;
+    font-size:15px;
+    color:#665b67;
+}
+
+.number{
+    position:absolute;
+    top:-18px;
+    left:-18px;
+
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    background:#f4b5ce;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    box-shadow:0 8px 20px rgba(210,120,160,.25);
+}
+
+.bus{
+    min-height:220px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(135deg,#ffe5ef,#eee6ff);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 25px 60px rgba(100,80,120,.12);
+
+    transform:rotate(2deg);
+}
+
+.bus-icon{
+    font-size:75px;
+    filter:drop-shadow(0 12px 8px rgba(100,80,120,.12));
+}
+
+.bus span{
+    margin-top:15px;
+    font-family:'Sacramento',cursive;
+    font-size:32px;
+    color:#96677f;
+}
+
+/* ===============================
+   SECOND YEAR
+================================ */
+
+.second-year{
+    padding-top:120px;
+}
+
+.second-wrapper{
+    margin-top:60px;
+    position:relative;
+}
+
+.chat{
+    width:min(760px,100%);
+    margin:0 auto;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+    padding:25px;
+
+    box-shadow:
+        0 30px 70px rgba(100,80,120,.15);
+
+    border:1px solid rgba(255,255,255,.9);
+}
+
+.chat-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding-bottom:20px;
+    border-bottom:1px solid #f0e5ec;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#ffc5dd,#cfc8ff);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.chat-name{
+    font-weight:bold;
+    color:#5c4a59;
+}
+
+.online{
+    font-size:11px;
+    color:#91a67e;
+}
+
+.chat-body{
+    padding:25px 5px;
+}
+
+.bubble{
+    max-width:90%;
+    padding:18px 20px;
+    margin:15px 0;
+    line-height:1.8;
+    font-size:15px;
+
+    border-radius:22px;
+    position:relative;
+}
+
+.bubble.left{
+    background:#f2ecff;
+    border-bottom-left-radius:5px;
+    margin-right:auto;
+}
+
+.bubble.right{
+    background:#ffe6f0;
+    border-bottom-right-radius:5px;
+    margin-left:auto;
+}
+
+.long-note{
+    background:#fffdf2;
+    padding:35px;
+    margin-top:35px;
+
+    border-radius:5px;
+
+    box-shadow:
+        0 15px 35px rgba(130,100,70,.1);
+
+    position:relative;
+
+    font-family:'DM Sans',sans-serif;
+    line-height:2;
+}
+
+.long-note::before{
+    content:"SECOND YEAR";
+    position:absolute;
+    top:-14px;
+    left:25px;
+
+    padding:7px 15px;
+    background:#bba8eb;
+    color:#fff;
+
+    font-size:10px;
+    letter-spacing:2px;
+
+    transform:rotate(-2deg);
+}
+
+.highlight{
+    background:#ffe0ed;
+    padding:2px 6px;
+    border-radius:5px;
+}
+
+/* ===============================
+   THIRD YEAR
+================================ */
+
+.third-year{
+    padding-top:120px;
+}
+
+.third-layout{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:60px;
+    align-items:start;
+}
+
+.memory-stamp{
+    position:sticky;
+    top:30px;
+
+    padding:35px 25px;
+
+    background:#fff;
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(100,80,120,.12);
+
+    text-align:center;
+
+    transform:rotate(-3deg);
+}
+
+.memory-stamp .big{
+    font-family:'Sacramento',cursive;
+    font-size:75px;
+    color:#d982a7;
+}
+
+.memory-stamp h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+}
+
+.memory-stamp p{
+    margin-top:10px;
+    color:#8b7a87;
+    line-height:1.6;
+}
+
+.sticker-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+    font-size:27px;
+}
+
+.third-content{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.note{
+    background:#fff;
+    padding:28px;
+    border-radius:24px;
+
+    box-shadow:0 18px 45px rgba(100,80,120,.1);
+
+    line-height:1.9;
+    font-size:15px;
+
+    border-left:6px solid #e8aec8;
+}
+
+.note:nth-child(2){
+    border-left-color:#b9ace8;
+}
+
+.note:nth-child(3){
+    border-left-color:#a9d5dc;
+}
+
+.note:nth-child(4){
+    border-left-color:#f1c48c;
+}
+
+/* ===============================
+   COLLEGE DAY
+================================ */
+
+.college-day{
+    text-align:center;
+}
+
+.rainbow-card{
+    margin:55px auto 0;
+    width:min(850px,100%);
+
+    padding:70px 30px;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd7e7,
+            #d9d6ff,
+            #d3f1ef,
+            #fff1c8
+        );
+
+    box-shadow:
+        0 35px 80px rgba(100,80,120,.18);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.rainbow-card::before{
+    content:"🌈";
+    position:absolute;
+    font-size:150px;
+    opacity:.18;
+    right:-20px;
+    top:-25px;
+}
+
+.rainbow-card::after{
+    content:"✨";
+    position:absolute;
+    font-size:100px;
+    opacity:.2;
+    left:10px;
+    bottom:-25px;
+}
+
+.rainbow-card h2{
+    position:relative;
+    z-index:2;
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+}
+
+.rainbow-card p{
+    position:relative;
+    z-index:2;
+    margin:25px auto 0;
+    max-width:650px;
+    line-height:2;
+}
+
+/* ===============================
+   TRIP
+================================ */
+
+.trip{
+    padding-top:100px;
+}
+
+.ticket{
+    width:min(800px,100%);
+    margin:50px auto 0;
+
+    display:grid;
+    grid-template-columns:150px 1fr;
+
+    background:#fff8dd;
+
+    border-radius:20px;
+
+    box-shadow:0 25px 60px rgba(120,100,70,.12);
+
+    overflow:hidden;
+
+    transform:rotate(-1deg);
+}
+
+.ticket-side{
+    background:#d9c7ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:65px;
+}
+
+.ticket-main{
+    padding:35px;
+}
+
+.ticket-main h2{
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+}
+
+.ticket-main p{
+    margin-top:15px;
+    line-height:1.9;
+}
+
+.ticket-number{
+    margin-top:20px;
+    font-size:11px;
+    letter-spacing:3px;
+    color:#a08c98;
+}
+
+/* ===============================
+   FAREWELL
+================================ */
+
+.farewell{
+    text-align:center;
+}
+
+.album{
+    margin:55px auto 0;
+    width:min(850px,100%);
+
+    padding:25px;
+
+    background:#fff;
+
+    box-shadow:
+        0 30px 70px rgba(90,70,90,.15);
+
+    transform:rotate(1deg);
+}
+
+.album-inner{
+    border:2px dashed #e5b5ca;
+    padding:60px 25px;
+
+    background:#fffafd;
+}
+
+.album h2{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+}
+
+.album p{
+    max-width:620px;
+    margin:25px auto 0;
+    line-height:2;
+}
+
+.farewell-icon{
+    font-size:75px;
+    margin-bottom:20px;
+}
+
+/* ===============================
+   LAST DAY
+================================ */
+
+.last-day{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.last-card{
+    width:min(750px,100%);
+    padding:70px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.94),
+            rgba(255,236,245,.95)
+        );
+
+    border-radius:40px;
+
+    box-shadow:
+        0 35px 90px rgba(130,80,110,.18);
+
+    position:relative;
+}
+
+.last-card::before{
+    content:"♡";
+    position:absolute;
+    font-size:180px;
+    color:#f5c5d9;
+    opacity:.25;
+    top:-60px;
+    left:-35px;
+}
+
+.last-card::after{
+    content:"♡";
+    position:absolute;
+    font-size:140px;
+    color:#cfc6f4;
+    opacity:.25;
+    bottom:-50px;
+    right:-30px;
+}
+
+.last-card > *{
+    position:relative;
+    z-index:2;
+}
+
+.hug{
+    font-size:75px;
+}
+
+.last-card h2{
+    margin-top:20px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(38px,6vw,60px);
+}
+
+.last-card p{
+    margin:25px auto;
+    max-width:620px;
+    line-height:2;
+    font-size:16px;
+}
+
+.quote{
+    margin-top:40px;
+    padding:25px;
+
+    font-family:'Sacramento',cursive;
+    font-size:34px;
+
+    color:#b16d91;
+
+    border-top:1px solid #edcfdd;
+    border-bottom:1px solid #edcfdd;
+}
+
+.next-button{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:40px;
+
+    padding:15px 25px;
+
+    text-decoration:none;
+    color:#fff;
+
+    background:#d783a7;
+
+    border-radius:100px;
+
+    font-weight:600;
+
+    box-shadow:0 12px 30px rgba(210,120,160,.25);
+
+    transition:.3s;
+}
+
+.next-button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(210,120,160,.35);
+}
+
+/* ===============================
+   HEART CLICK
+================================ */
+
+.heart{
+    position:fixed;
+    pointer-events:none;
+    z-index:999;
+
+    animation:heartUp 1.2s ease forwards;
+}
+
+@keyframes heartUp{
+    0%{
+        transform:scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-100px) scale(1.4) rotate(15deg);
+        opacity:0;
+    }
+}
+
+/* ===============================
+   REVEAL
+================================ */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:750px){
+
+    .hero{
+        padding:15px;
+    }
+
+    .hero-card{
+        min-height:620px;
+        border-radius:28px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-note{
+        font-size:23px;
+    }
+
+    section{
+        width:90%;
+        padding:75px 0;
+    }
+
+    .timeline-line{
+        display:none;
+    }
+
+    .memory-row{
+        grid-template-columns:1fr;
+        gap:25px;
+        margin-top:45px;
+    }
+
+    .memory-row:nth-child(even){
+        direction:ltr;
+    }
+
+    .memory-card{
+        padding:28px 22px;
+    }
+
+    .bus{
+        min-height:190px;
+    }
+
+    .bus-icon{
+        font-size:60px;
+    }
+
+    .chat{
+        padding:16px;
+        border-radius:23px;
+    }
+
+    .bubble{
+        max-width:95%;
+        font-size:14px;
+    }
+
+    .long-note{
+        padding:25px 20px;
+        font-size:14px;
+    }
+
+    .third-layout{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .memory-stamp{
+        position:relative;
+        top:auto;
+    }
+
+    .rainbow-card{
+        padding:55px 20px;
+        border-radius:28px;
+    }
+
+    .rainbow-card h2{
+        font-size:34px;
+    }
+
+    .ticket{
+        grid-template-columns:1fr;
+        transform:none;
+    }
+
+    .ticket-side{
+        min-height:100px;
+        font-size:50px;
+    }
+
+    .ticket-main{
+        padding:25px 20px;
+    }
+
+    .album{
+        transform:none;
+        padding:15px;
+    }
+
+    .album-inner{
+        padding:45px 18px;
+    }
+
+    .album h2{
+        font-size:34px;
+    }
+
+    .last-card{
+        padding:55px 22px;
+        border-radius:30px;
+    }
+
+    .quote{
+        font-size:29px;
+    }
+
+    .f1,.f2,.f3,.f4,.f5{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PROTECTION -->
+<script id="xmsmud">
+if(sessionStorage.getItem("loggedIn") !== "true"){
+    window.location.href="sub.html";
+}
+</script>
+
+<!-- FLOATING DECORATIONS -->
+
+<div class="float f1">🦋</div>
+<div class="float f2">♡</div>
+<div class="float f3">✦</div>
+<div class="float f4">🦋</div>
+<div class="float f5">✧</div>
+
+
+<!-- ===============================
+     HERO
+================================ -->
+
+<header class="hero">
+
+    <div class="hero-card">
+
+        <div class="hero-content">
+
+            <div class="mini-label">
+                chapter 03 · college
+            </div>
+
+            <h1>
+                Our College
+                <span>Days</span>
+            </h1>
+
+            <p>
+                School mudinju college vandhom...
+                <br>
+                Anga dhaan namma friendship unexpected-ah
+                romba close aachu. 🥹
+            </p>
+
+            <div class="hero-note">
+                “Somehow... we became us.” 💗
+            </div>
+
+            <div class="scroll">
+                SCROLL TO REMEMBER
+                <span>↓</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===============================
+     FIRST YEAR
+================================ -->
+
+<section class="first-year">
+
+    <div class="section-tag">
+        🎓 chapter one
+    </div>
+
+    <h2 class="section-title">
+        First Year
+    </h2>
+
+    <p class="section-sub">
+        We were there... but we didn't know what was coming. 🥹
+    </p>
+
+    <div class="timeline-line"></div>
+
+
+    <div class="memory-row reveal">
+
+        <div class="memory-card">
+
+            <div class="number">01</div>
+
+            <h3>
+                The Beginning 📞
+            </h3>
+
+            <p>
+                Nama entha college join pannom nu first uh theriyala
+                ana naa Jerome la join pannuvanu ungaluku therium.
+                Aaniku oru naal nee enaku call Pani nanum antha college nu sonna.
+            </p>
+
+        </div>
+
+
+        <div class="bus">
+
+            <div class="bus-icon">
+                🚌
+            </div>
+
+            <span>
+                Same college... same journey
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="memory-row reveal">
+
+        <div class="memory-card">
+
+            <div class="number">02</div>
+
+            <h3>
+                Not So Close... Yet 😂
+            </h3>
+
+            <p>
+                First year la romba close onnum illa
+                nama , Nee Jebisha kuda tha romba close ah iruntha.
+                Bus laum tha enata olunga peasa mata, naanum olunga peasa maten.
+                Ana onna tha irupom.
+            </p>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <div class="number">03</div>
+
+            <h3>
+                Our Little Circle 💗
+            </h3>
+
+            <p>
+                Apro Afreen kuda close ah iruntha.
+                Naa Sweety kuda second bench la irupen,
+                nee first bench la irupa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     SECOND YEAR
+================================ -->
+
+<section class="second-year">
+
+    <div class="section-tag">
+        💬 chapter two
+    </div>
+
+    <h2 class="section-title">
+        And Then... Second Year
+    </h2>
+
+    <p class="section-sub">
+        Somewhere between calls, messages, food and comedy...
+        everything changed. 🥹
+    </p>
+
+
+    <div class="second-wrapper reveal">
+
+        <div class="chat">
+
+            <div class="chat-top">
+
+                <div class="avatar">
+                    🫶🏻
+                </div>
+
+                <div>
+                    <div class="chat-name">
+                        Us Two 💗
+                    </div>
+
+                    <div class="online">
+                        memories · always online
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="chat-body">
+
+                <div class="bubble left">
+                    Ana second year la irunthu epidi close aanom
+                    nu enku theriyala...
+                </div>
+
+
+                <div class="bubble right">
+                    Romba close aagitom. Enaku athu ipo nenacha
+                    surprise ah tha irukku.
+                </div>
+
+
+                <div class="bubble left">
+                    Ana na unata romba close aagiten.
+                    Apro tha call ella romba peasa start panno,
+                    msg ella panno.
+                </div>
+
+
+                <div class="bubble right">
+                    Food exchange pannuvom. 🍱😂
+                </div>
+
+            </div>
+
+
+            <div class="long-note">
+
+                <p>
+
+                    Apro Jebi ku nama rendu perum romba close aanathu
+                    pidikala 😅
+                    ava unaka mela avlo paasam vachu irutha atha apidi iruntha pola
+
+                    <br><br>
+
+                    Naa ellame share pannuven. Neeyum share pannuva.
+                    Food exchange pannuvom. 🍱😂
+
+                    <br><br>
+
+                    nee love pannura paiyan nuka name sollutathuku aline ka name nee use panni
+                    alando nu etho sonna athu evlo comedy ah irunthathu,
+                    antha time la tha idiot vantha avana paaathu ivan tha athu nu sonna
+                    apro avanaye site aadicha avanaye mrg pannura dream ku ella pona😂
+                    athu mattuma bus la varum pothu evana ellamo paapa,dress shop la
+                    irukka paiyana site aadipa evlo pera site adichu irukka neee.😂😂
+
+                    <br><br>
+
+                    Apro na v ah paathen bus la ella avana site aadichen
+                    athu ella oru time athu ella evlo nalla iruthathu , nama
+                    maari maaari kindal pannuvom.
+
+                    <br><br>
+
+                    apro madam ku jebi kuda mrg vera athula dona baby unaku v paiyan vera,
+                    ana ena maatuum daughter-in-law ah edukala neee
+                    athu ella comedya ah irunthu atha vachu romba fun pannuvom romba nalla irunthathu antha days.
+
+                    <br><br>
+
+                   Apro ena bus la b.com girls kuda
+                    summa summa sanda tha varum namaku
+
+                    <br><br>
+
+                    bell adicha odane ooduvome bus la seat pidika
+                    athu ella ipo nenacha siri tha varu ana athu romba
+                    nalla irunthuchu.dona ella namala kindal pannuva,bus la seat 
+                    pidika porom nu ana namaku tha therium fast ah pogalana 
+                    seat kedaikathu nu illaya diii.
+
+                    <br><br>
+
+                    Lap room la namku konjam memories irukku nee enaka kitta varuva
+                    dona jebi kitta pova,but sila time la place changa panna matanga namaku tha paithiyam pidikum,
+                    lap la vachu tha nama romba gossip ella peasuvom athuvum yara pathi nu 
+                    unaku therium.😅Apro avanga kuda peasum pothu avanga rendu perum oru maari solluvanga,
+
+                    <br><br>
+
+                    apro avangaluku sanda vantha place change panna matanga
+                    na vera aalu ka place la vanthu irupen
+                    oru neram kuda class la iruntahthu illa summa veliya tha irupom,
+                    apro canteen la kedapom.
+
+                    <br><br>
+
+                    class ella nalla cut aadichom bathroom la tha most ah irupom nama ,
+                    apro nama most fav place enathu antha  step tha ella free time la 
+                    nama anga tha iruppom.antha place la tha sad irunthalum happy ah iruntahthu
+                    anga tha irupom.one time la mam and sir ta ella maatunome 😂
+                    athu ella namaku golden memories😅🫶🏻
+
+                    <br><br>
+
+                    antha days ella ipo enaku venum nu thoonuthu
+                    clg la iruthu irukkalam nu nenaikuren
+
+                    <br><br>
+
+                    one time la library la sanda vanthathey niyabam irukka
+                    nee ena samathanam paduthuna athu nalla iruthathu
+
+                    <br><br>
+
+                    ana ipo athula 1 % kuda nee enata peasala iru iru
+                    unaku oru naal irukku.
+
+                    <br><br>
+
+                    Unaku onnu niyabam irukka?
+                    Avanga rendu perumkum sanda.
+                    Athuku nama olunga peasala.
+                    Atha nenacha comedy ah irukku la? 😂
+                    avanga sanda potathuku nama ethuku 
+                    peasama irunthom nu ipo vara enaku theriyala😂.
+                    <br>
+                    <b>Next 3rd year ku polama..........</b>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     THIRD YEAR
+================================ -->
+
+<section class="third-year">
+
+    <div class="section-tag">
+        🫶🏻 chapter three
+    </div>
+
+    <h2 class="section-title">
+        Third Year
+    </h2>
+
+    <p class="section-sub">
+        The year where everything became a memory worth keeping.
+    </p>
+
+
+    <div class="third-layout">
+
+        <div class="memory-stamp reveal">
+
+            <div class="big">
+                3
+            </div>
+
+            <h3>
+                Our Year
+            </h3>
+
+            <p>
+                Romba romba close aana year. 💗
+            </p>
+
+            <div class="sticker-row">
+                🍱 📸 🫶🏻
+            </div>
+
+        </div>
+
+
+        <div class="third-content">
+
+            <div class="note reveal">
+
+                <p>
+                    Apro ena 3 year la romba romba close aagitom.Na unga veetuku ella vanthu irukken 
+                    athu ella evlo nalla irunthathu,class change pannanga antha class namaku romba pidichu irunthathu,ana 3 year 
+                    full ah anga irukka mudiyala, 
+                    Apro madam vera oru ithula poninga athu enanu ungaluku therium.
+                   
+                </p>
+
+            </div>
+
+
+            <div class="note reveal">
+
+                <p>
+                    But nee enaka kuda eppavum pola tha iruntha.
+                    Apro unnala tha Anna thangachii bond create aachu
+                    naa expect pannala ipadi oru bond create aagum nu na nenaikave illa, 
+                    ipadiye oru annana life long irukkum nu nenaikuren.
+                    Avanga kuda nee eppavum happy ah last vara onna irukkanum.
+                    This is my wish. 💗
+
+
+                    <br><br>
+
+                    nama 3 perum nalla jolly ah suthunom veliya ella sapida ponom.
+                    iv ku vera clg ku ponathu kuda nalla irunthathu , apo neenga rendu perum 
+                    ena ella panninga😂.Apro nama john's clg ku ponom anga konjam boys kuda pic ella eduthome.
+
+                    <br><br>
+
+                    nama 3 perum irutha memories um nalla iruthathu,
+                    namaku ellame panni thathathu,
+                    sweet ella vaangi thathanga,
+                    na expect pannala aaloda frnd ah oru sister maari treat pannum And
+                    clg muduchathum itha bond irukkum nu nenaikala ana ipo vara Neeyum avangalum 
+                    peasama tha irukkinga.<b>Thank you 💗</b>
+
+                    <br><br>
+
+                    neenga rendu perumey enaku nalla support ahh iruthinga
+                    life long irupinga nu nenaikiuren enaka kuda
+
+                    <br><br>
+
+                    apidi illana thedi vanthu adipen rendu peraium tha😅
+
+                    <br><br>
+
+                    but nenga rendu perum panna help ella eppavum maraka maten
+                    unga kuda enaku neraya memories irukku
+                    athuvum eppavum marakathu.
+
+                    <br><br>
+
+                    Thanks for everythings.
+                    3 year romba romba nalla irunthathu. 💗
+                </p>
+
+            </div>
+
+
+            <div class="note reveal">
+
+                <p>
+                    Food ella order panni sapiduvom.
+                    Apro IV ku ponathu nalla iruthathu.
+                    <br>
+                    Lulu mall la nalla enjoy pannom nama ride ella ponom nalla sapitom, ana
+                    nenga rendu perum nalla tha enjoy panninga 😂
+                </p>
+
+            </div>
+
+
+            <div class="note reveal">
+
+                <p>
+                    Apro veliya ella povom.
+                    Ellame open ah share panno rendu perum.
+                    rendu perumey enata romba pasama irunthinga.
+
+                    <br><br>
+
+                    Apro clg la  enaka birthday ah romba nalla celebrate
+                    panning rendu perum.
+                    Athuku romba romba thanks. 🥹💗
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     COLLEGE DAY
+================================ -->
+
+<section class="college-day reveal">
+
+    <div class="section-tag">
+        🌈 one colourful day
+    </div>
+
+    <h2 class="section-title">
+        College Day
+    </h2>
+
+    <div class="rainbow-card">
+
+        <h2>
+            “Vaanavil” 🌈😂
+        </h2>
+
+        <p>
+
+            College Day ku onna dress potom.
+            Ellarume Namala paathu porama tha patanga.
+            Namala vaanavil nu sonnanga.
+            Atha nenacha epidiyo irukku 😅
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     TRIP
+================================ -->
+
+<section class="trip reveal">
+
+    <div class="section-tag">
+        🎟️ one thing we missed
+    </div>
+
+    <h2 class="section-title">
+        The Trip We Never Took ✈️
+    </h2>
+
+    <div class="ticket">
+
+        <div class="ticket-side">
+            🎟️
+        </div>
+
+        <div class="ticket-main">
+
+            <h2>
+                College Trip
+            </h2>
+
+            <p>
+                College trip thaa poga mudiyala.
+                Athu onnu tha nama misss pannitom.
+                trip la ore maari poduthathuku dress ella eduka plan potom ana poga tha mudiyala.
+            </p>
+
+            <div class="ticket-number">
+                MEMORY TICKET · NEVER EXPIRED
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     FAREWELL
+================================ -->
+
+<section class="farewell reveal">
+
+    <div class="section-tag">
+        🎓 almost goodbye
+    </div>
+
+    <h2 class="section-title">
+        Farewell
+    </h2>
+
+    <div class="album">
+
+        <div class="album-inner">
+
+            <div class="farewell-icon">
+                🎓💗
+            </div>
+
+            <h2>
+                One Last Chapter
+            </h2>
+
+            <p>
+
+                Apro ena final year last sem farewell tha
+                onna tha dress podanum nu irunthom.
+                Ana poda mudiyala.
+
+                <br><br>
+
+                Ana enjoy pannom la.
+                Veliya ella ponom nama 4 peru.
+                And Nama 3 perum antha days romba nalla iruthuchu.
+
+                <br><br>
+
+                Atha romba miss pannuren.
+                Ithu unaku niyabam irukknu nu theriyala.
+                <br>
+                kila paaru....
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     LAST DAY
+================================ -->
+
+<section class="last-day">
+
+    <div class="last-card reveal">
+
+        <div class="hug">
+            🫂
+        </div>
+
+        <h2>
+            Last Day...
+        </h2>
+
+        <p>
+
+            Last exam last day...
+
+            <br><br>
+
+            Oru hug mattum thantha.athu enaku avlo special
+            ah irunthathu.
+            Avlo tha nama clg days eh muduchathu la. 🥹
+
+            <br><br>
+
+            Antha days ella enaku apovum marakathu.
+            Unnaium eppavum maraka maten. 💗
+            <br>
+            <b>
+                I Really Miss youuuu  Loosu....🥹
+            </b>
+
+        </p>
+
+
+        <div class="quote">
+
+            Some friendships don't need a perfect ending...
+            Because the memories stay forever. 🫶🏻
+
+        </div>
+
+
+        <a href="memories.html" class="next-button">
+            Next Memory →
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},
+{
+    threshold:.12
+});
+
+revealElements.forEach(el=>{
+    observer.observe(el);
+});
+
+
+/* ===============================
+   CLICK HEART EFFECT
+================================ */
+
+document.addEventListener("click",(e)=>{
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    const hearts=[
+        "💗",
+        "💕",
+        "💖",
+        "🩷",
+        "♡",
+        "✨"
+    ];
+
+    heart.innerHTML=
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=
+        e.clientX+"px";
+
+    heart.style.top=
+        e.clientY+"px";
+
+    heart.style.fontSize=
+        (15+Math.random()*15)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },1200);
+
+});
+
+</script>
+
+</body>
+</html>

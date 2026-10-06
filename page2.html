@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome Inside 💗</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe3ef,
+                    #e1f6ff,
+                    #fff8fc
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        /* Floating hearts */
+
+        .float {
+
+            position: absolute;
+
+            font-size: 24px;
+
+            animation: float 6s infinite ease-in-out;
+
+            opacity: .7;
+
+        }
+
+        .f1 {
+            left: 10%;
+            top: 18%;
+        }
+
+        .f2 {
+            right: 12%;
+            top: 20%;
+            animation-delay: 1s;
+        }
+
+        .f3 {
+            left: 15%;
+            bottom: 15%;
+            animation-delay: 2s;
+        }
+
+        .f4 {
+            right: 15%;
+            bottom: 18%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+        }
+
+
+        /* Main container */
+
+        .container {
+
+            width: 90%;
+            max-width: 500px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 5;
+
+            animation: appear 1s ease;
+
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .emoji {
+
+            font-size: 60px;
+
+            animation: bounce 2s infinite;
+
+        }
+
+        @keyframes bounce {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        h1 {
+
+            margin-top: 12px;
+
+            color: #df719d;
+
+            font-size: 30px;
+
+        }
+
+
+        .text {
+
+            margin-top: 12px;
+
+            color: #687c86;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* Door */
+
+        .door-area {
+
+            margin: 30px auto;
+
+            width: 190px;
+            height: 245px;
+
+            perspective: 1000px;
+
+        }
+
+
+        .door-frame {
+
+            width: 100%;
+            height: 100%;
+
+            background: #fff;
+
+            border-radius: 100px 100px 15px 15px;
+
+            padding: 10px;
+
+            box-shadow:
+                0 15px 30px
+                rgba(120,170,200,.25);
+
+        }
+
+
+        .door {
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 90px 90px 10px 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffabc9,
+                    #a5def3
+                );
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+
+            transform-origin: left center;
+
+            transition: transform 1.2s ease;
+
+            box-shadow:
+                inset 0 0 0 3px
+                rgba(255,255,255,.5);
+
+        }
+
+
+        .door.open {
+
+            transform:
+                rotateY(-105deg);
+
+        }
+
+
+        .door-content {
+
+            color: white;
+
+            text-align: center;
+
+            pointer-events: none;
+
+        }
+
+
+        .lock {
+
+            font-size: 42px;
+
+        }
+
+
+        .door-content p {
+
+            margin-top: 8px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+
+        .hint {
+
+            color: #a07f91;
+
+            font-size: 13px;
+
+            animation: blink 1.5s infinite;
+
+        }
+
+        @keyframes blink {
+
+            50% {
+                opacity: .4;
+            }
+
+        }
+
+
+        /* Continue button */
+
+        .next-btn {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 13px 28px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9fc4,
+                    #8fdcf5
+                );
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(130,190,220,.25);
+
+        }
+
+
+        .next-btn.show {
+
+            display: inline-block;
+
+            animation: pop .5s ease;
+
+        }
+
+
+        @keyframes pop {
+
+            from {
+                opacity: 0;
+                transform: scale(.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Login Protection -->
+
+    <script>
+
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+
+            window.location.href = "sub.html";
+
+        }
+
+    </script>
+
+
+    <!-- Floating elements -->
+
+    <div class="float f1">💗</div>
+
+    <div class="float f2">🩵</div>
+
+    <div class="float f3">✨</div>
+
+    <div class="float f4">💕</div>
+
+
+    <div class="container">
+
+
+        <div class="emoji">
+            🥹💗
+        </div>
+
+
+        <h1>
+            Aahhh! Finally! 😂
+        </h1>
+
+
+        <p class="text">
+
+            Correct person dhaan login pannirukka! 😌
+
+            <br>
+
+            Ippo dhaan actual thing start aagudhu...
+
+            <br>
+
+            But first...
+
+            <br>
+
+            <b>One small door is waiting for you. 👀</b>
+
+        </p>
+
+
+        <!-- Door -->
+
+        <div class="door-area">
+
+            <div class="door-frame">
+
+                <div
+                    class="door"
+                    id="door"
+                    onclick="openDoor()">
+
+                    <div class="door-content">
+
+                        <div class="lock">
+                            🔐
+                        </div>
+
+                        <p>
+                            TAP ME 👀
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="hint" id="hint">
+
+            Hmm... door open panna try pannalama? 😂
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            id="nextBtn"
+            onclick="nextPage()">
+
+            Okay... Let's Go 💗 →
+
+        </button>
+
+
+    </div>
+
+
+    <script>
+
+        function openDoor() {
+
+            const door =
+                document.getElementById("door");
+
+            const hint =
+                document.getElementById("hint");
+
+            const nextBtn =
+                document.getElementById("nextBtn");
+
+
+            door.classList.add("open");
+
+
+            hint.innerText =
+                "Ayyoo! Open aayiduchu 😂💗";
+
+
+            nextBtn.classList.add("show");
+
+        }
+
+
+        function nextPage() {
+
+            window.location.href =
+                "story.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
